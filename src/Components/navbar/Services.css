@@ -1,0 +1,203 @@
+/* --- DYNAMIC BACKGROUND SECTION --- */
+.services-container {
+  position: relative;
+  padding: 100px 5%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+
+  /* The Animated Gradient */
+  background: linear-gradient(-45deg, 0deg, #1b5c96, #02b02a, #4e54c8, #8f94fb);
+  
+  
+}
+
+
+/* Floating abstract shapes to add depth */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  
+}
+
+.shape-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.2);
+  top: -210px;
+  left: -150px;
+}
+
+.shape-2 {
+  width: 500px;
+  height: 500px;
+  background: rgba(26, 216, 254, 0.3);
+  bottom: -210px;
+  right: -150px;
+}
+
+
+/* --- HEADER TEXT --- */
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #ffffff;
+}
+
+.services-header h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #1b5c96; 
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px #aa15a5d0,
+               0 0 10px #b8e9259d, 
+               0 0 15px #4ec850a3 ;
+}
+
+.services-header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* --- SLIDER STYLES --- */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.services-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 30px;
+  padding: 20px 10px; 
+  scroll-behavior: smooth;
+  
+  /* Hide scrollbar for cleaner look */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.services-slider::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Glassmorphism Navigation Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1); /* Transparent glass */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.slider-btn:hover {
+  background: rgba(255, 255, 255, 0.3); /* Gets brighter when hovered */
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left-btn { left: -20px; }
+.right-btn { right: -20px; }
+
+/* --- GLASSMORPHISM CARDS --- */
+.glass-card {
+  /* Added specific widths so cards don't crush inside the slider */
+  min-width: 320px;
+  max-width: 320px;
+  flex-shrink: 0;
+  
+  /* Frosted Glass Effect */
+  background: rgba(61, 48, 48, 0.614);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* Borders and Shadow */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  
+  padding: 40px 30px;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 5px #a006ff,
+              0 0 10px #ebff1062, 
+              0 0 15px #00ff4866;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.service-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.service-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.3s ease;
+}
+
+.glass-card:hover .service-link {
+  gap: 10px; 
+}
+
+/* Adjust layout on smaller mobile screens */
+@media (max-width: 768px) {
+  .glass-card {
+    min-width: 280px;
+    max-width: 280px;
+  }
+  .slider-btn {
+    display: none; /* Hide arrows on touch screens */
+  }
+}

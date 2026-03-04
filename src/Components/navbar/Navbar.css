@@ -1,0 +1,139 @@
+/* --- Wrapper to keep it fixed at the top --- */
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 24px; /* Default starting distance from the top */
+  z-index: 2;
+  transition: padding 0.4s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* --- STATE: When Scrolled (Wrapper moves slightly up) --- */
+.navbar-wrapper.scrolled {
+  padding-top: 12px; 
+}
+
+/* --- The Dark Outer Pill (Default Wide State) --- */
+.navbar-dark-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  max-width: 1400px; /* Starts wide */
+  padding: 12px 24px;
+  
+  /* Dark translucent background + Frosted glass blur */
+  background-color: rgb(0, 0, 0); 
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  border-radius: 100px;
+  box-shadow: 0 0 20px #ffffffcd;
+  
+  
+  /* The animation engine for the shrink */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+/* --- STATE: When Scrolled (The Shrink Effect) --- */
+.navbar-wrapper.scrolled .navbar-dark-pill {
+  max-width: 1050px; /* Shrinks horizontally */
+  padding: 8px 16px; /* Shrinks vertically */
+  background-color: rgba(10, 10, 10, 0.552); /* Darkens slightly */
+  backdrop-filter: blur(16px); /* Increases blur intensity */
+  box-shadow: 0 0 20px #ffffffcd;/* Makes the glow stronger */
+}
+
+/* --- The White Center Pill --- */
+.nav-center-pill {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background-color: transparent;
+  padding: 10px 28px;
+  border-radius: 100px;
+  z-index: 1;
+  
+  /* Pushes it to the absolute center */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s ease;
+}
+
+/* Optional: Make the white inner pill slightly smaller on scroll too */
+.navbar-wrapper.scrolled .nav-center-pill {
+  padding: 8px 20px;
+  gap: 20px;
+  background-color: transparent;
+}
+
+/* --- The Neon Pink Text --- */
+.neon-link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color:  #a0a0a0; 
+  transition: all 0.2s ease-in-out;
+}
+
+.neon-link:hover {
+  color: #00950f;
+}
+
+/* --- Right Side Actions --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.text-link {
+  text-decoration: none;
+  color: #a0a0a0;
+  font-size: 15px;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.text-link:hover {
+  color: #ffffff;
+}
+
+/* --- Orange Button --- */
+.btn-orange {
+  background-color: #ff5a1f;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.nav-logo {
+  font-size: small;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  background: linear-gradient(to right, #ff0202, #009d05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-wrapper.scrolled .nav-logo{
+  font-size: x-small;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+}
+
+.btn-orange:hover {
+  background-color: #e04a15;
+}

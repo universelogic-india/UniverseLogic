@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.main-app-container {
+    width: 100%;
+    min-width: 100vh;
+    margin: 0 auto;
+    position: relative; /* Essential for the glow to position correctly */
+    
+    /* Default cursor position in the middle of the screen before the mouse moves */
+    --mouse-x: 50vw;
+    --mouse-y: 50vh;
+    
+    /* Default light mode background */
+    background: #222; 
+    transition: background 0.3s ease; /* Smooth transition for dark mode */
+}
+
+
+
+/* --- THE COLORFUL GLOWING SWIRL --- */
+.main-app-container::before {
+    content: "";
+    position: fixed;
+    
+    /* Centers exactly on your cursor using the React JS variables */
+    left: var(--mouse-x);
+    top: var(--mouse-y);
+    
+    /* Size of the glow */
+    width: 50px;
+    height: 50px;
+    
+    /* The colors (Pink, Green, and White center) */
+    background: 
+        radial-gradient(circle at 30% 30%, rgba(130, 255, 100, 0.4), transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(255, 120, 150, 0.4), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6), transparent 60%);
+    
+    /* Makes the shape slightly irregular so it looks like a swirl when spinning */
+    border-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;
+    
+    /* Heavy blur creates the soft light-leak effect */
+    filter: blur(10px);
+    
+    /* Prevents the glow from blocking you from clicking buttons/links */
+    pointer-events: none;
+    
+    /* Puts it behind your content */
+    z-index: 5; 
+    
+    /* Smoothly follows cursor and spins continuously */
+    transition: left 0.2s ease-out, top 0.2s ease-out;
+    animation: glowing-swirl 5s infinite linear;
+}
+
+/* The spinning engine */
+@keyframes glowing-swirl {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.heroSection {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Keeps your HeroSection content ABOVE the glowing background */
+}
+.Product{
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Keeps your Product content ABOVE the glowing background */
+}
+
+.Services{
+    width: 100%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 1; /* Keeps your Product content ABOVE the glowing background */
+}
+
+.Contact {
+  width: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.Footer {
+  width: 100%;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+}
+

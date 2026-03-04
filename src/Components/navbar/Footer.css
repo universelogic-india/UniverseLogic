@@ -1,0 +1,190 @@
+/* --- LIGHT MODE (Default) --- */
+.footer-container {
+  padding: 80px 5% 30px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 1;
+  background: linear-gradient(-45deg, 0deg, #1b5c96, #02b02a, #4e54c8, #8f94fb);
+}
+/* Floating abstract shapes to add depth */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  
+}
+.footer-shape-1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(26, 216, 254, 0.3);
+  top: -210px;
+  left: -150px;
+  
+}
+
+
+.line {
+    margin: 20px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-logo { 
+  font-size: 1.5rem; background: linear-gradient(to right, #ff0202, #009d05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; 
+  margin-bottom: 15px; 
+}
+.footer-logo span { 
+  color: #f39c12;
+ }
+.footer-col h3 { 
+  font-size: 1.1rem; margin-bottom: 20px;color: #ffffff;
+ }
+.footer-col ul { 
+  list-style: none; padding: 0;
+ }
+.footer-col ul li {
+   margin-bottom: 10px; 
+  }
+.footer-col ul li a {
+   text-decoration: none; color: #666; transition: 0.3s;
+   }
+.footer-col ul li a:hover { 
+  color: #1f95ef; padding-left: 5px;
+ }
+
+.legal-links a { 
+  text-decoration: none; color: #666; transition: 0.3s;
+ }
+.legal-links a:hover { 
+  color: #1f95ef; padding-left: 5px;
+ }
+
+/* Giant Text Styling */
+.footer-middle {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 40px 0;
+}
+
+
+
+.giant-text {
+  font-size: clamp(3rem, 12vw, 10rem);
+  font-weight: 900;
+  letter-spacing: -5px;
+  background: linear-gradient(90deg, #1b5c96, #1ad8fe, #a006ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.15; /* Subtler in light mode */
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsiveness */
+@media (max-width: 968px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .giant-text { letter-spacing: -2px; }
+}
+
+@media (max-width: 480px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+}
+
+.footer-col.brand-info {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #666;
+}
+
+.footer-col{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    color: #666;
+   
+}
+.footer-col ul{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-bottom{
+    
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.footer-name {
+    font-weight: 700;
+    background: linear-gradient(to right, #ff0202, #009d05);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+    
+}
+.social-links {
+  display: flex;          /* Aligns items in a row */
+  flex-direction: row;    /* Explicitly sets the direction to row */
+  gap: 50px;              /* Adds consistent spacing between icons */
+  align-items: center;    /* Vertically centers icons if they have different heights */
+}
+
+.social-links a img {
+  width: 25px;            /* Set your desired width */
+  height: 25px;           /* Keep height the same for uniform size */
+  object-fit: contain;    /* Prevents the image from stretching/distorting */
+  transition: transform 0.2s ease; /* Adds a smooth hover effect */
+}
+
+/* Optional: Subtle hover effect */
+.social-links a img:hover {
+  transform: scale(1.1);
+}
+
+.legal-links {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+  margin: 5px 0;
+  padding: 2px;
+  flex-direction: row;
+  
+}
+
+.legal-links a {
+  color: #5d3ab8;
+  text-decoration: none;
+}
+
+.divider-legal-links {
+  color: #ffffff;
+  font-weight: bold;
+}

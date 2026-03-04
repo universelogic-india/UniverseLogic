@@ -1,0 +1,107 @@
+/* --- MAIN CONTAINER --- */
+.heroContainer {
+  width: 100%;
+  min-height: 50vh;
+  /* Flexbox magic for responsiveness */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* CRITICAL: Allows the image and text to stack on mobile */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem; /* Adds space between text and image */
+  padding: 5vw; /* Fluid padding that shrinks with the window */
+  box-sizing: border-box; /* Ensures padding doesn't cause horizontal scrolling */
+  
+}
+
+
+/* Floating abstract shapes to add depth */
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  
+}
+
+
+.hero-shape-2 {
+  width: 500px;
+  height: 500px;
+  background: rgba(26, 216, 254, 0.3);
+  bottom: -210px;
+  right: -150px;
+}
+
+
+/* --- TEXT CONTENT SECTION --- */
+.hero-text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centers text on mobile */
+  text-align: center;
+  flex: 1 1 45%; /* Takes up roughly half the screen on desktop */
+  min-width: 300px; /* Once the window is smaller than this, it forces the wrap to a new row */
+  z-index: 2; /* Ensures text stays on top */
+}
+
+/* Your original title styling and fluid clamp() sizing */
+.hero-title {
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 700;
+  margin-top: 0;
+  line-height: 1.2;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #000000ce,
+               0 0 10px #1f95efb8, 
+               0 0 15px #03e6759d;
+}
+
+.hero-text-content .hero-title .red-name {
+  color: #ff0000;
+  text-shadow: 0 0 5px #000000ce,
+               0 0 10px #1f95efb8, 
+               0 0 15px #03e6759d;
+}
+
+.hero-text-content .hero-title .green-name {
+  color: #05ff05;
+  text-shadow: 0 0 5px #e2e2e29e,
+               0 0 10px #1f95efb8, 
+               0 0 15px #ffff2984;
+}
+
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: #96c5f7;
+}
+
+/* --- IMAGE SECTION --- */
+.bg-img {
+  flex: 1 1 45%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Removed the rigid min-width so the container can shrink freely */
+}
+
+.bg-img img {
+  /* THIS IS THE FIX: The image is now directly tied to the window's width (vw) */
+  /* It will fluidly scale to 40% of the window size, but never shrink below 280px or grow beyond 700px */
+  width: clamp(230px, 40vw, 450px); 
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* --- DESKTOP TWEAKS --- */
+@media (min-width: 768px) {
+  .hero-text-content {
+    align-items: flex-start; /* Aligns text to the left on larger screens */
+    text-align: left;
+  }
+}
