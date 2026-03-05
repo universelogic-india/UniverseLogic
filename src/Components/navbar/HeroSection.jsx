@@ -28,7 +28,7 @@ const HeroSection = () => {
       
 
         <div className="bg-img">
-          <img src="/src/assets/hero-img.png" alt="Hero-Background" className='responsive-img'/>
+          <img src="/hero-img.png" alt="Hero-Background" className='responsive-img'/>
         </div>    
     </div>
     
