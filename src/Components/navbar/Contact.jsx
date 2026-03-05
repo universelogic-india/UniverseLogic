@@ -109,9 +109,15 @@ const Contact = () => {
             <button type="submit" className="submit-btn">Send Message</button>
             
             {/* Added the result message span from form 1 */}
-            <span className="form-result" style={{display: 'block', marginTop: '15px', fontWeight: 'bold'}}>
-              {result}
-            </span>
+            <span className="form-result" style={{
+  display: 'block', 
+  marginTop: '15px', 
+  fontWeight: 'bold',
+  // Check the text: If it has ✅ make it green, if ❌ make it red, otherwise make it white (for "Sending....")
+  color: result.includes("✅") ? "#05ff05" : result.includes("❌") ? "#ff0000" : "#ffffff"
+}}>
+  {result}
+</span>
           </form>
         </div>
       </div>
