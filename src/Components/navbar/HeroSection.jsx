@@ -1,5 +1,5 @@
 import './heroSection.css';
-import hero-img from '../src/assets/hero-img.png';
+import hero_img from '../src/assets/hero-img.png';
 import Typewriter from 'typewriter-effect';
 
 const HeroSection = () => {
@@ -29,7 +29,7 @@ const HeroSection = () => {
       
 
         <div className="bg-img">
-          <img src="/src/assets/hero-img.png" alt="Hero-Background" className='responsive-img'/>
+          <img src="/src/assets/hero_img.png" alt="Hero-Background" className='responsive-img'/>
         </div>    
     </div>
     
