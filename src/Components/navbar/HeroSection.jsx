@@ -1,4 +1,5 @@
-import './heroSection.css'
+import './heroSection.css';
+import heroBg from '../assets/hero-img.png';
 import Typewriter from 'typewriter-effect';
 
 const HeroSection = () => {
